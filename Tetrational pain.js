@@ -1,3 +1,6 @@
+export {log, round, floor, SLog, undoSLog, addSLogs, subtractSLogs, multiplySLogs, divideSLogs, expSLogs, tetrateSLogs}
+
+
 function log(num){return (Math.log(num)/2.302585092994046)}
 
 function round(num, places) {return ((Math.round((num)/(10 ** places)))*(10 ** places))}
