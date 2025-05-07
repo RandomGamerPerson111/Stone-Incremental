@@ -1,3 +1,5 @@
+const updateinterval = 50
+
 const baseplayer{
   stone: 0
   SPS: 0
@@ -6,8 +8,8 @@ const baseplayer{
 player = baseplayer
 
 function update() {
-  player.stone+=player.SPS/20
+  player.stone+=player.SPS/(1000/updateinterval)
   document.getElementById("stone").textContent = player.stone.toFixed(2)
 }
 
-setInterval(update, 50)
+setInterval(update, updateinterval)
