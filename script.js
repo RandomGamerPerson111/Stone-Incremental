@@ -1,6 +1,6 @@
 const updateinterval = 50
 
-const baseplayer{
+const baseplayer = {
   stone: 0
   SPS: 0
 }
