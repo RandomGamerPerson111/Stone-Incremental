@@ -25,4 +25,4 @@ function update() {
 }
 
 setInterval(update, updateinterval)
-setInterval(runchecks, 3000)
+setInterval(runchecks, 500)
