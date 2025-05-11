@@ -22,6 +22,8 @@ function update() {
   player.Stone+=player.SPS/(1000/updateinterval)
   if (player.Stone >= 1000) {player.MagmaToGain = Math.floor(Math.cbrt(player.Stone/1000))} else {player.MagmaToGain = 0}
   document.getElementById("stone").textContent = player.Stone.toFixed(2) || "Error stone didn't load"
+  document.getElementById("magma").textContent = player.Magma.toFixed(2) || "Error stone didn't load"
+  
 }
 
 setInterval(update, updateinterval)
