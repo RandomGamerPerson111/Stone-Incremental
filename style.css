@@ -1,9 +1,11 @@
     .sbtn {
-      border: 2px solid black;
-      backround-color: white;
+      border-width: 2px;
+      border-style: solid;
+      background-color: white;
     }
 
     .mres {
-      border: 2px solid red;
-      backround-image: linear-gradient(Red, OrangeRed, Orange);
+      border-width: 2px;
+      border-style: solid;
+      background-image: linear-gradient(Red, OrangeRed, Orange);
     }
