@@ -25,7 +25,7 @@ function update() {
   document.getElementById("magma").textContent = player.Magma.toFixed(2) || "Error magma didn't load"
   document.getElementById("SPS").textContent = player.SPS.toFixed(2) || "Error SPS didn't load"
   if (player.MagmaToGain === 0) {document.getElementById("magmareset").textContent = "You need 1000 stone to reset" || "Error MagmaGain didn't load"}
-  else {document.getElementById("magmareset").textContent = "Reset for " + player.MagmaToGain.toFixed(2) + "magma" || "Error MagmaGain didn't load"}
+  else {document.getElementById("magmareset").textContent = "Reset for " + player.MagmaToGain.toFixed(2) + " magma" || "Error MagmaGain didn't load"}
   
 }
 
