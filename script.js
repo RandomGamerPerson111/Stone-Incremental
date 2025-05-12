@@ -5,7 +5,7 @@ const baseplayer = {
   SPS: 0,
   Magma: 0,
   MagmaToGain: 0,
-  MagmaUnlocked: 0
+  MagmaUnlocked: 0,
   StMlt: { // A list of stone multipliers
     Magma: 1
   }
