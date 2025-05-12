@@ -14,6 +14,9 @@ const baseplayer = {
 
 player = baseplayer
 
+function round2(input) {
+  return (Math.round(input*100)/100).toStirng
+}
 
 function increaseSPS() {
   player.SPS += player.StMlt.Total
@@ -37,10 +40,10 @@ function update() {
   player.Stone+=player.SPS/(1000/updateinterval)
   if (player.Stone >= 1000) {player.MagmaToGain = Math.floor(Math.cbrt(player.Stone/1000))} else {player.MagmaToGain = 0}
   document.getElementById("stone").textContent = player.Stone.toFixed(2) || "Error stone didn't load"
-  document.getElementById("magma").textContent = player.Magma.toFixed(2) || "Error magma didn't load"
+  document.getElementById("magma").textContent = round2(player.Magma) || "Error magma didn't load"
   document.getElementById("SPS").textContent = player.SPS.toFixed(2) || "Error SPS didn't load"
   if (player.MagmaToGain === 0) {document.getElementById("magmareset").textContent = "You need 1000 stone to reset" || "Error MagmaGain didn't load"}
-  else {document.getElementById("magmareset").textContent = "Reset for " + player.MagmaToGain.toFixed(2) + " magma" || "Error MagmaGain didn't load"}
+  else {document.getElementById("magmareset").textContent = "Reset for " + round2(player.MagmaToGain) + " magma" || "Error MagmaGain didn't load"}
   
 }
 
