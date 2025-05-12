@@ -34,14 +34,16 @@ function magmareset() {
 
 function compressreset() {
   if (player.CSU === 0) {return}
-  player.Stone = 0
+  player.Stone -= CSG*10000
   player.SPS = 0
   player.CStone += CSG
 }
 
 function runchecks() {
   if (player.MagmaUnlocked === 0 && player.Stone >= 1000) {player.MagmaUnlocked = 1}
-  if (plaer.MagmaUnlocked === 0) {document.getElementById(MagmaTab).style.display = none} else {document.getElementById(MagmaTab).style.display = inline}
+  if (player.MagmaUnlocked === 0) {document.getElementById(MagmaTab).style.display = none} else {document.getElementById(MagmaTab).style.display = inline}
+  if (player.CSU === 0 && player.Stone >= 10000) {player.CSU = 1}
+  if (player.CSU === 0) {document.getElementById(CSinfo).style.display = none} else {document.getElementById(CSinfo).style.display = inline}
 }
 
 function update() {
