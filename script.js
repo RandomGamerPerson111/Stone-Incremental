@@ -9,7 +9,7 @@ const baseplayer = {
 }
 
 player = baseplayer
-const MagmaTab = document.getElementById(MagmaTab)
+
 
 function increaseSPS() {
   player.SPS += 1
@@ -24,7 +24,7 @@ function magmareset() {
 
 function runchecks() {
   if (player.MagmaUnlocked === 0 && player.Stone >= 1000) {player.MagmaUnlocked = 1}
-  if (plaer.MagmaUnlocked === 0) {MagmaTab.style.display = none} else {MagmaTab.style.display = inline}
+  if (plaer.MagmaUnlocked === 0) {document.getElementById(MagmaTab).style.display = none} else {document.getElementById(MagmaTab).style.display = inline}
 }
 
 function update() {
