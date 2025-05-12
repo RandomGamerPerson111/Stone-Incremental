@@ -32,7 +32,7 @@ function runchecks() {
 }
 
 function update() {
-  player.StMlt.Magma = Math.log(player.Magma)
+  player.StMlt.Magma = Math.log(player.Magma + 1)+1
   player.StMlt.Total = player.StMlt.Magma
   player.Stone+=player.SPS/(1000/updateinterval)
   if (player.Stone >= 1000) {player.MagmaToGain = Math.floor(Math.cbrt(player.Stone/1000))} else {player.MagmaToGain = 0}
