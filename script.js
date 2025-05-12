@@ -6,6 +6,9 @@ const baseplayer = {
   Magma: 0,
   MagmaToGain: 0,
   MagmaUnlocked: 0
+  StMlt: { // A list of stone multipliers
+    Magma: 1
+  }
 }
 
 player = baseplayer
