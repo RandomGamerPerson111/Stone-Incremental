@@ -9,13 +9,22 @@ const baseplayer = {
 }
 
 player = baseplayer
+const MagmaTab = document.getElementById(MagmaTab)
 
 function increaseSPS() {
   player.SPS += 1
 }
 
+function magmareset() {
+  if (player.MagmaToGain === 0) {return;}
+  player.Magma += player.MagmaToGain
+  player.SPS = 0
+  Player.Stone = 0
+}
+
 function runchecks() {
   if (player.MagmaUnlocked === 0 && player.Stone >= 1000) {player.MagmaUnlocked = 1}
+  if (plaer.MagmaUnlocked === 0) {MagmaTab.style.display = none} else {MagmaTab.style.display = inline}
 }
 
 function update() {
