@@ -19,7 +19,7 @@ function magmareset() {
   if (player.MagmaToGain === 0) {return;}
   player.Magma += player.MagmaToGain
   player.SPS = 0
-  Player.Stone = 0
+  player.Stone = 0
 }
 
 function runchecks() {
