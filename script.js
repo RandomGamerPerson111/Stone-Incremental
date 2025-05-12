@@ -7,7 +7,8 @@ const baseplayer = {
   MagmaToGain: 0,
   MagmaUnlocked: 0,
   StMlt: { // A list of stone multipliers
-    Magma: 1
+    Magma: 1,
+    Total: 1
   }
 }
 
@@ -15,7 +16,7 @@ player = baseplayer
 
 
 function increaseSPS() {
-  player.SPS += 1
+  player.SPS += player.StMlt.Total
 }
 
 function magmareset() {
@@ -31,6 +32,8 @@ function runchecks() {
 }
 
 function update() {
+  player.StMlt.Magma = Math.log(player.Magma)
+  player.StMlt.Total = player.StMlt.Magma
   player.Stone+=player.SPS/(1000/updateinterval)
   if (player.Stone >= 1000) {player.MagmaToGain = Math.floor(Math.cbrt(player.Stone/1000))} else {player.MagmaToGain = 0}
   document.getElementById("stone").textContent = player.Stone.toFixed(2) || "Error stone didn't load"
