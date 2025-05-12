@@ -6,6 +6,9 @@ const baseplayer = {
   Magma: 0,
   MagmaToGain: 0,
   MagmaUnlocked: 0,
+  CStone: 0,
+  CSG: 0,
+  CSU: 0,
   StMlt: { // A list of stone multipliers
     Magma: 1,
     Total: 1
@@ -27,6 +30,13 @@ function magmareset() {
   player.Magma += player.MagmaToGain
   player.SPS = 0
   player.Stone = 0
+}
+
+function compressreset() {
+  if (player.CSU === 0) {return}
+  player.Stone = 0
+  player.SPS = 0
+  player.CStone += CSG
 }
 
 function runchecks() {
