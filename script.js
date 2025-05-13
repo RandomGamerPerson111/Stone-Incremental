@@ -57,7 +57,7 @@ function update() {
   if (player.MagmaToGain === 0) {document.getElementById("magmareset").textContent = "You need 1000 stone to reset" || "Error MagmaGain didn't load"}
   else {document.getElementById("magmareset").textContent = "Reset for " + round2(player.MagmaToGain) + " magma" || "Error MagmaGain didn't load"}
   if (player.CSG === 0) {document.getElementById("CSbtn").textContent = "You need 10000 stone to compress stone" || "Error CS didn't load"}
-  else {document.getElementById("CSG").textContent = "Compress " + round2(player.CSG*10000) + " stone into " + round2(player.CSG) + " compressed stone"|| "Error CS didn't load"}
+  else {document.getElementById("CSbtn").textContent = "Compress " + round2(player.CSG*10000) + " stone into " + round2(player.CSG) + " compressed stone"|| "Error CS didn't load"}
   
   
 }
