@@ -2,18 +2,25 @@
 <head>
   <title>Stone incremental</title>
   <script src="script.js"></script>
+  <script src="abbrev.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Stone incremental</h1>
+  <h1 id="ErRoR">Stone Incremental<span style="font-size:12px">&emsp;&nbsp;v0.0.1</span></h2>
   <hr>
   <div class="StoneInfo">
     <h2>Stone: <span id="stone"></span></h2>
     <h2>Stone/s: <span id="SPS"></span></h2>
   </div>
   <div class="StoneButtons">
-    <button id="StoneButton1" class="sbtn1" onclick="increaseSPS()"> Click to increase stone per second
+    <button id="StoneButton1" class="sbtn" onclick="increaseSPS()"> Click to increase stone per second
     </button>  
+  </div>
+  <div class="StoneUpgrades" id="MT1SU">
+	  <hr id="hiddenHR">
+	  <button id="SU1" class="SU" onclick="buystonebuyable(1)"><span>Increase stone per second per click by +x1, cost:<span id="SU1S"></span></span></button>
+	  <button id="SU2" class="SU" onclick="buystonebuyable(2)"><span>Decrease cost of compressed stone, cost:<span id="SU2S"></span></span></button>
+	  <button id="SU3" class="SU" onclick="buystonebuyable(3)"><span>Increase magma gain by +x1, cost:<span id="SU3S"></span></span></button>
   </div>
   <div class="compstone" id="CSinfo">
     <h2>Compressed Stone: <span id="CStone"></span></h2>
@@ -39,7 +46,7 @@
 	   <button id="tierreset" class="tres" onclick="tierreset()">Reset to gain a mine tier</button>
 	</div>
 	<p id="MT0">Boosts: <br> None</p>
-	<p id="MT1">Boosts: <br> 10x stone <br> 2x Magma</p>
+	<p id="MT1">Boosts: <br> 10x stone <br> 2x Magma <br> Unlocks: <br> Stone upgrades</p>
 	<p id="MT2">Boosts: <br> 100x stone <br> 5x Magma <br> 2x Compressed stone </p>
   </div>
 </body>
