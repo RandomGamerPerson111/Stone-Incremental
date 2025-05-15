@@ -14,12 +14,43 @@
       border-width: 2px;
       border-style: solid;
       background-image: linear-gradient(#444444,#3a3a3a);
-	  color: #bfbfbf
+	  color: #bfbfbf;
     }
 
     .tres {
       border-width: 2px;
       border-style: solid;
       background-image: url("WoodTexture.png");
-	  color: #dfdfdf
+	  color: #dfdfdf;
     }
+#hiddenHR {
+	visibility: hidden;
+}
+
+.SU {
+  display: block;
+}
+
+#SU1:hover span {
+  display: none;
+}
+
+#SU1:hover:before {
+  content: "Scaling: 10*1.5^x";
+}
+
+#SU2:hover span {
+  display: none;
+}
+
+#SU2:hover:before {
+  content: "Scaling: 5K*2^x";
+}
+
+#SU3:hover span {
+  display: none;
+}
+
+#SU3:hover:before {
+  content: "Scaling: 500*1.5^x";
+}
