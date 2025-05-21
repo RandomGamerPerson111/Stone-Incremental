@@ -38,3 +38,15 @@
 .Sshift {
 	display: inline;
 }
+
+#Tab2 {
+	display: none;
+}
+
+.Tab {
+ 	border-width: 2px;
+ 	border-style: solid;
+ 	border-radius: 10px;
+ 	background-image: linear-gradient(#efefef,#cfcfcf);
+ 	color: #000000;
+}
