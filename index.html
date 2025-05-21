@@ -8,48 +8,64 @@
 <body>
   <h1 id="ErRoR">Stone Incremental<span style="font-size:12px">&emsp;&nbsp;v0.0.3</span></h2>
   <hr>
-  <div class="StoneInfo">
-    <h2>Stone: <span id="stone"></span></h2>
-    <h2>Stone/s: <span id="SPS"></span></h2>
+  <div>
+    <button class="Tab" onclick="switchTabs(1)">Stone</button>
+	<button class="Tab" onclick="switchTabs(2)">Changelog</button>
   </div>
-  <div class="StoneButtons">
-    <button id="StoneButton1" class="sbtn" onclick="increaseSPS()"> Click to increase stone per second
-    </button>  
-  </div>
-  <div class="StoneUpgrades" id="MT1SU">
+  <hr>
+  <div id="Tab1" >
+    <div class="StoneInfo">
+      <h2>Stone: <span id="stone"></span></h2>
+      <h2>Stone/s: <span id="SPS"></span></h2>
+    </div>
+    <div class="StoneButtons">
+      <button id="StoneButton1" class="sbtn" onclick="increaseSPS()"> Click to increase stone per second
+      </button>  
+    </div>
+    <div class="StoneUpgrades" id="MT1SU">
 	  <hr id="hiddenHR">
 	  <button id="SU1" class="SU" onclick="buystonebuyable(1)"><span id='Hshift1' class='Sshift'>Increase stone per second per click by +x1, cost:<span id="SU1S"></span></span><span id='Sshift1' class='Hshift'>Scaling: 10*1.5^x, Effect: *(x+1)</span></button>
 	  <button id="SU2" class="SU" onclick="buystonebuyable(2)"><span id='Hshift2' class='Sshift'><span id='Hs2'></span><span id="SU2S"></span></span><span id='Sshift2'class='Hshift'>Scaling: 5K*2^x, Effect: -1000x</span></button>
 	  <button id="SU3" class="SU" onclick="buystonebuyable(3)"><span id='Hshift3' class='Sshift'>Increase magma gain by +x1, cost:<span id="SU3S"></span></span><span id='Sshift3' class='Hshift'>Scaling: 500*1.5^x, Effect: *(x+1)</span></button>
-  </div>
-  <div class="StoneUpgrades" id="MT2SU">
+    </div>
+    <div class="StoneUpgrades" id="MT2SU">
 	  <button id="SU2" class="SU" onclick="buystonebuyable(4)"><span id='Hshift4' class='Sshift'><span id='Hs4'></span><span id="SU4S"></span></span><span id='Sshift4' class='Hshift'>Scaling: 50K*3^x, Effect: *(2^x)</span></button>
-  </div>
-  <div class="compstone" id="CSinfo">
-    <h2>Compressed Stone: <span id="CStone"></span></h2>
-    <button id="CSbtn" class="CSbtn" onclick="compressreset()"></button>
-  </div>
+    </div>
+    <div class="compstone" id="CSinfo">
+      <h2>Compressed Stone: <span id="CStone"></span></h2>
+      <button id="CSbtn" class="CSbtn" onclick="compressreset()"></button>
+    </div>
   
-  <div id="MagmaTab">
-    <div class="MagmaInfo">
-      <hr>
-      <h2>Magma: <span id="magma"></span></h2>
+    <div id="MagmaTab">
+      <div class="MagmaInfo">
+        <hr>
+        <h2>Magma: <span id="magma"></span></h2>
+      </div>
+      <div class="MagmaButtons">
+        <button id="magmareset" class="mres" onclick="magmareset()"></button>
+      </div>
     </div>
-    <div class="MagmaButtons">
-      <button id="magmareset" class="mres" onclick="magmareset()"></button>
+  
+    <div id="TierTab">
+	    <div>
+          <hr>
+	    </div>
+      <div id="TierInfo">
+        <h2>Mine tier:<span id="MineTier"></span></h2>
+      </div>
+	  <div>
+	     <button id="tierreset" class="tres" onclick="tierreset()">Reset to gain a mine tier</button>
+	  </div>
+	  <p id="MT0">Boosts: <br> None</p>
+	  <p id="MT1">Boosts: <br> 10x stone <br> 2x Magma <br> Unlocks: <br> Stone upgrades</p>
+	  <p id="MT2">Boosts: <br> 100x stone <br> 5x Magma <br> 2x Compressed stone <br> Unlocks: <br> Stone upgrades <br> Auto stone click</p>
     </div>
   </div>
-  
-  <div id="TierTab">
-	<hr>
-    <div id="TierInfo">
-      <h2>Mine tier:<span id="MineTier"></span></h2>
-    </div>
-	<div>
-	   <button id="tierreset" class="tres" onclick="tierreset()">Reset to gain a mine tier</button>
-	</div>
-	<p id="MT0">Boosts: <br> None</p>
-	<p id="MT1">Boosts: <br> 10x stone <br> 2x Magma <br> Unlocks: <br> Stone upgrades</p>
-	<p id="MT2">Boosts: <br> 100x stone <br> 5x Magma <br> 2x Compressed stone <br> Unlocks: <br> Stone upgrades <br> Auto stone click</p>
+  <div id="Tab2">
+	<h2>Changelog</h2>
+	  <p>Version 0.0.1: <br> Released the game with content up to Mine tier 1!</p>
+	  <p>Version 0.0.2: <br> Added content for Mine tier 1</p>
+	  <p>Version 0.0.3: <br> Added content for Mine tier 2</p>
+	  <p>Version 0.0.4: <br> Made the changelog</p>
   </div>
 </body>
