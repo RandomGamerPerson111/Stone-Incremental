@@ -84,6 +84,19 @@ function tierreset() {
 
 }
 
+function switchTabs(tab) {
+  switch(tab) {
+    case 1:
+	  document.getElementById('Tab1').style.display = 'block'
+	  document.getElementById('Tab2').style.display = 'none'
+	  break;
+	case 2:
+	  document.getElementById('Tab1').style.display = 'none'
+	  document.getElementById('Tab2').style.display = 'block'
+	  break;
+  }
+}
+
 
 function runchecks() {
   if (player.MagmaUnlocked === 0 && player.Stone >= 25) {player.MagmaUnlocked = 1}
