@@ -6,11 +6,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 id="ErRoR">Stone Incremental<span style="font-size:12px">&emsp;&nbsp;v0.0.3</span></h2>
+  <h1 id="ErRoR">Stone Incremental<span style="font-size:12px">&emsp;&nbsp;v0.0.5</span></h2>
   <hr>
   <div>
-    <button class="Tab" onclick="switchTabs(1)">Stone</button>
+    <button class="Tab" onclick="switchTabs(1)">Main</button>
 	<button class="Tab" onclick="switchTabs(2)">Changelog</button>
+	<button class="Tab" onclick="switchTabs(3)">Info</button>
   </div>
   <hr>
   <div id="Tab1" >
@@ -45,7 +46,17 @@
         <button id="magmareset" class="mres" onclick="magmareset()"></button>
       </div>
     </div>
-  
+
+	<div id="LavaTab">
+      <div class="LavaInfo">
+        <h2>Lava: <span id="Lava"></span></h2>
+		<h2>Lava/s: <span id="LPS"></span></h2>
+		<p>Boosts: <br> <span id="MPSP"></span> <br> <span id="LvStMlt"></span> <br> <span id="LvMgMlt"></span> </h2>
+      </div>
+      <div class="LavaButtons">
+      </div>
+    </div>
+	  
     <div id="TierTab">
 	    <div>
           <hr>
@@ -59,6 +70,7 @@
 	  <p id="MT0">Boosts: <br> None</p>
 	  <p id="MT1">Boosts: <br> 10x stone <br> 2x Magma <br> Unlocks: <br> Stone upgrades</p>
 	  <p id="MT2">Boosts: <br> 100x stone <br> 5x Magma <br> 2x Compressed stone <br> Unlocks: <br> Stone upgrades <br> Auto stone click</p>
+	  <p id="MT3">Boosts: <br> 1000x stone <br> 25x Magma <br> 4x Compressed stone <br> Unlocks: <br> Stone upgrades <br> Auto stone click <br> Lava</p>
     </div>
   </div>
   <div id="Tab2">
@@ -67,5 +79,20 @@
 	  <p>Version 0.0.2: <br> Added content for Mine tier 1</p>
 	  <p>Version 0.0.3: <br> Added content for Mine tier 2</p>
 	  <p>Version 0.0.4: <br> Made the changelog</p>
+	  <p>Version 0.0.5: <br> Added content for Mine tier 3 and added the info tab</p>
+  </div>
+  <div id="Tab3">
+	<h2>Basic:</h2>
+	  <p>Welcome to stone incremental, in this game you try to make as much stone as possible!</p>
+	<h2>Stone:</h2>
+	  <p>This is the main resource of the game, it also can get you powerful boosts later on</p>
+	<h2>Magma:</h2>
+	  <p>This is the first reset, it boosts stone and is needed later on</p>
+	<h2>Compressed Stone:</h2>
+	  <p>This is the first quasi-reset in the game, as it doesn't reset magma</p>
+	<h2>Mine Tier:</h2>
+	  <p>This is the second reset layer, and it gives incredible boosts</p>
+	<h2>Lava:</h2>
+	  <p>This is an entirely automated currency, that boosts stone and magma, it also automates magma gain</p>
   </div>
 </body>
