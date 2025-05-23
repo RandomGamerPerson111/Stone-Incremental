@@ -39,14 +39,14 @@
 	display: inline;
 }
 
-#Tab2 {
+#Tab2,#Tab3 {
 	display: none;
 }
 
 .Tab {
- 	border-width: 2px;
- 	border-style: solid;
- 	border-radius: 10px;
- 	background-image: linear-gradient(#efefef,#cfcfcf);
- 	color: #000000;
+	  border-width: 2px;
+      border-style: solid;
+	  border-radius: 10px;
+      background-image: linear-gradient(#efefef,#cfcfcf);
+	  color: #000000;
 }
