@@ -1,3 +1,5 @@
+"use strict";
+
 const updateinterval = 50
 
 let Au = 1
@@ -11,8 +13,8 @@ const baseplayer = {
   CStone: 0,
   CSG: 0,
   CSU: 0,
-  MineTier: 0,
-  MTU: 0,
+  MineTier: 2,
+  MTU: 1,
   LavaUnlocked: 0,
   Lava: 0,
   LPS: 0,
@@ -51,8 +53,8 @@ const baseplayer = {
   }
 }
 
-player = baseplayer
-gamepower = 1
+var player = baseplayer
+var gamepower = 1
 
 
 function round2(input) {
@@ -68,6 +70,7 @@ function magmareset() {
   player.Magma += player.MagmaToGain
   player.SPS = 0
   player.Stone = 0
+  player.Lava = 0
 }
 
 function compressreset() {
@@ -90,8 +93,9 @@ function tierreset() {
 		player.SB.Dos.Amount = 0
 		player.SB.Tres.Amount = 0
 		player.SB.Quatro.Amount = 0
-		player.CSU = 0}
-
+		player.CSU = 0
+	    player.Lava = 0
+	}
 }
 
 function switchTabs(tab) {
@@ -127,7 +131,15 @@ function runchecks() {
 
 	if (player.LavaUnlocked === 0 && player.MineTier >= 3 && player.MagmaUnlocked === 1) {player.LavaUnlocked = 1}
 	if (player.LavaUnlocked === 0) {document.getElementById("LavaTab").style.display = 'none'} else {document.getElementById("LavaTab").style.display = 'inline'}
-	
+
+
+
+
+
+	if (player.MagmaUnlocked === 1) {document.getElementById("InfoMagma").style.display = 'block'} else {document.getElementById("InfoMagma").style.display = 'none'}
+	if (player.CSU === 1) {document.getElementById("InfoCstone").style.display = 'block'} else {document.getElementById("InfoCStone").style.display = 'none'}
+	if (player.MTU === 1) {document.getElementById("InfoMT").style.display = 'block'} else {document.getElementById("InfoMT").style.display = 'none'}
+	if (player.LavaUnlocked === 1) {document.getElementById("InfoLava").style.display = 'block'} else {document.getElementById("InfoLava").style.display = 'none'}
 }
 
 function buystonebuyable(n) {
@@ -160,6 +172,7 @@ function buystonebuyable(n) {
 function update() {
 
 
+	
   switch (player.MineTier) {
 	case 0:
 	  player.StMlt.MT = 1
@@ -226,8 +239,8 @@ function update() {
   player.SB.Dos.Cost = 5000*(2**player.SB.Dos.Amount)
   player.CSMlt.SBDos = 1000 * player.SB.Dos.Amount
   player.SB.Tres.Cost = 500*(1.5**player.SB.Tres.Amount)
-  player.MgMlt.SBTres = 1 + player.SB.Tres.Amount
-  player.SB.Quatro.Cost = 50000*(4**player.SB.Quatro.Amount)
+  player.MgMlt.SBTres = 1 + (player.SB.Tres.Amount/10)
+  player.SB.Quatro.Cost = 50000*(5**player.SB.Quatro.Amount)
   player.AuMlt.SBQuatro = 2 ** player.SB.Quatro.Amount
 
 
@@ -238,7 +251,7 @@ function update() {
   player.AuMlt.Rate = player.AuMlt.SBQuatro
   player.StMlt.LvMlt = ((Math.log(player.Lava+1))**2)+1
   player.MgMlt.LvMlt = Math.log(player.Lava+1)+1
-  player.MgMlt.MPSP = Math.log(player.Lava+1)
+  player.MgMlt.MPSP = Math.log(player.Lava+1)/10
 
   if (player.LavaUnlocked === 1) {player.Magma += (player.MagmaToGain * player.MgMlt.MPSP / 100)}
 
@@ -278,7 +291,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 
-	
+
 
 	if (player.SB.Dos.Amount >= 9) {document.getElementById('Hs2').textContent = 'Max level reached'; document.getElementById('SU2S').style.display = 'none'}
 	else {document.getElementById('Hs2').textContent = 'Decrease cost of compressed stone, cost:'; document.getElementById('SU2S').style.display = 'inline'}
@@ -287,26 +300,33 @@ document.addEventListener('keydown', function(event) {
 
 
   player.LPS = Math.floor(Math.cbrt(player.Magma))
+
+
 	
   player.Stone += player.SPS/(1000/updateinterval)
-  player.Lava += player.LPS/(1000/updateinterval)
+  if (player.LavaUnlocked === 1) {player.Lava += player.LPS/(1000/updateinterval)}
+
 
   document.getElementById("stone").textContent = fullformat(player.Stone) || "Error stone didn't load"
   document.getElementById("magma").textContent = fullformat(player.Magma) ||"Error magma didn't load"
   document.getElementById("SPS").textContent = fullformat(player.SPS) || "Error SPS didn't load"
   document.getElementById("CStone").textContent = fullformat(player.CStone) ||"Error CStone didn't load"
   document.getElementById("SU1S").textContent = fullformat(player.SB.Uno.Cost) ||"Error SU1 didn't load"
+		document.getElementById("ErRoR").textContent = 'e'
   document.getElementById("SU2S").textContent = fullformat(player.SB.Dos.Cost) ||"Error SU2 didn't load"
+		document.getElementById("ErRoR").textContent = 'f'
   document.getElementById("SU3S").textContent = fullformat(player.SB.Tres.Cost) ||"Error SU3 didn't load"
+		document.getElementById("ErRoR").textContent = 'g'
   document.getElementById("MineTier").textContent = fullformat(player.MineTier) || "Error mine tier didn't load"
   document.getElementById("SU4S").textContent = fullformat(player.SB.Quatro.Cost) ||"Error SU4 didn't load"
+	document.getElementById("ErRoR").textContent = 'h'
   document.getElementById("Lava").textContent = fullformat(player.Lava) ||"Error lava didn't load"
   document.getElementById("LPS").textContent = fullformat(player.LPS) ||"Error LPS didn't load"
   document.getElementById("LvStMlt").textContent = "Stone mutliplier: x" + fullformat(player.StMlt.LvMlt) ||"Error LPS didn't load" 
   document.getElementById("LvMgMlt").textContent = "Magma multiplier: x" + fullformat(player.MgMlt.LvMlt) ||"Error LPS didn't load"
   document.getElementById("MPSP").textContent = "Auto magma gain: " + fullformat(player.MgMlt.MPSP) + "%" ||"Error LPS didn't load"
+		document.getElementById("ErRoR").textContent = 'i'
 
-	
   
   if (player.MagmaToGain === 0) {document.getElementById("magmareset").textContent = "You need 100 stone to reset" || "Error MagmaGain didn't load"}
   else {document.getElementById("magmareset").textContent = "Reset for " + fullformat(player.MagmaToGain) + " magma" || "Error MagmaGain didn't load"}
@@ -354,6 +374,11 @@ function abbrev(num) {
 
 }
 
+var absnum = 0
+var tier = 0
+var suffex = 0
+var scaled = 0
+var roundedscaled = 0
 
 function formatnumber(num) {
     absnum = Math.abs(num)
@@ -381,5 +406,7 @@ function formatnumber(num) {
 
 
 function fullformat(num) {
-	if (num < 1000) {return round2(num)} else {return formatnumber(num)}
+	if (Number(num) < 1000) {return round2(Number(num))} else {return formatnumber(Number(num))}
 }
+
+
