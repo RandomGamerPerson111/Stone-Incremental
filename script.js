@@ -312,20 +312,15 @@ document.addEventListener('keydown', function(event) {
   document.getElementById("SPS").textContent = fullformat(player.SPS) || "Error SPS didn't load"
   document.getElementById("CStone").textContent = fullformat(player.CStone) ||"Error CStone didn't load"
   document.getElementById("SU1S").textContent = fullformat(player.SB.Uno.Cost) ||"Error SU1 didn't load"
-		document.getElementById("ErRoR").textContent = 'e'
-  document.getElementById("SU2S").textContent = fullformat(player.SB.Dos.Cost) ||"Error SU2 didn't load"
-		document.getElementById("ErRoR").textContent = 'f'
-  document.getElementById("SU3S").textContent = fullformat(player.SB.Tres.Cost) ||"Error SU3 didn't load"
-		document.getElementById("ErRoR").textContent = 'g'
+  document.getElementById("SU2S").textContent = fullformat(player.SB.Dos.Cost) ||"Error SU2 didn't load"	
+  document.getElementById("SU3S").textContent = fullformat(player.SB.Tres.Cost) ||"Error SU3 didn't load"		
   document.getElementById("MineTier").textContent = fullformat(player.MineTier) || "Error mine tier didn't load"
   document.getElementById("SU4S").textContent = fullformat(player.SB.Quatro.Cost) ||"Error SU4 didn't load"
-	document.getElementById("ErRoR").textContent = 'h'
   document.getElementById("Lava").textContent = fullformat(player.Lava) ||"Error lava didn't load"
   document.getElementById("LPS").textContent = fullformat(player.LPS) ||"Error LPS didn't load"
   document.getElementById("LvStMlt").textContent = "Stone mutliplier: x" + fullformat(player.StMlt.LvMlt) ||"Error LPS didn't load" 
   document.getElementById("LvMgMlt").textContent = "Magma multiplier: x" + fullformat(player.MgMlt.LvMlt) ||"Error LPS didn't load"
-  document.getElementById("MPSP").textContent = "Auto magma gain: " + fullformat(player.MgMlt.MPSP) + "%" ||"Error LPS didn't load"
-		document.getElementById("ErRoR").textContent = 'i'
+  document.getElementById("MPSP").textContent = "Auto magma gain: " + fullformat(player.MgMlt.MPSP) + "%" ||"Error LPS didn't load"		
 
   
   if (player.MagmaToGain === 0) {document.getElementById("magmareset").textContent = "You need 100 stone to reset" || "Error MagmaGain didn't load"}
